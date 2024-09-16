@@ -25,8 +25,8 @@ def absolute(n: int) -> int:
     Returns:
         the absolute value of the passed in number
     """
-    raise NotImplementedError("absolute")
-
+    n+=(n*-2)
+    return n
 
 def factorial(n: int) -> int:
     """Takes a number n, and computes the factorial n! You can assume the passed in
@@ -38,6 +38,13 @@ def factorial(n: int) -> int:
     Returns:
         factorial of the passed in number
     """
+    product=1
+    i=1
+    while i<=n:
+        product=product*i
+        i+=1
+    return product
+    
     raise NotImplementedError("factorial")
 
 
@@ -55,6 +62,11 @@ def every_other(lst: List[T]) -> List[T]:
     Returns:
         a list of every of other item in the original list starting with the first
     """
+    Output=[]
+    for i in range(0,len(lst),2):
+        Output.append(lst[i])
+    return Output
+
     raise NotImplementedError("every_other")
 
 
@@ -68,6 +80,11 @@ def sum_list(lst: List[int]) -> int:
     Returns:
         the sum of the passed in list
     """
+    sum=0
+    for i in range(len(lst)):
+        sum+=lst[i]
+    return sum
+
     raise NotImplementedError("sum_list")
 
 
@@ -80,6 +97,12 @@ def mean(lst: List[int]) -> float:
     Returns:
         the mean of the passed in list
     """
+    sum=0
+    for i in range(len(lst)):
+        sum+=lst[i]
+    
+    mean=sum/(len(lst))
+    return mean
     raise NotImplementedError("mean")
 
 
@@ -95,6 +118,13 @@ def median(lst: List[int]) -> float:
     Returns:
         the median of the passed in list
     """
+    median=0
+    if (len(lst)+1)%2==0:
+        median=(len(lst)+1)/2
+    else:
+        median=((lst[int((len(lst)+1)/2)])+(lst[int((len(lst)+1)/2)-1]))/2
+    return median
+
     raise NotImplementedError("median")
 
 
@@ -117,6 +147,20 @@ def duck_duck_goose(lst: List[str]) -> List[str]:
     Returns:
         the resulting list after playing duck duck goose
     """
+    count=0
+    posit=-1
+    while len(lst)>2:
+        count+=1
+        posit+=1
+        if posit>len(lst)-1:
+            posit=-1
+        if count==3:
+            del lst[posit]
+            count=0
+    return lst
+        
+
+
     raise NotImplementedError("duck_duck_goose")
 
 
@@ -134,6 +178,6 @@ if __name__ == "__main__":
     assert median([1, 2, 3, 4, 5]) == 3, "median of [1,2,3,4,5] failed"
 
     names = ["roscoe", "kim", "woz", "solin", "law", "remess"]
-    assert duck_duck_goose(names) == ["roscoe", "law"]
-
+    assert duck_duck_goose(names) == ["roscoe", "law"] 
+    
     print("All tests passed!")
