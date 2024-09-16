@@ -14,10 +14,24 @@ Mr. Berg will look at all your files to determine what you have completed.  If t
 
 1. What is your initial thoughts about the python programming language?
 
-
+This isn't my first time working with Python, so it feels familiar and relatively easy to work with. however, I'm still working on optomization, and doing things in ways that are more efficient
 
 2. Describe some similarities and differences that you found between python and other programming languages you have used in the past?
 
-
+N/A
 
 3. What are some things that you learned through this assignment?
+
+
+
+I have learned a few functions that have helped me to work better and more efficiently within Python. The list() function was not someting I was aware of before, and it allowed me to make lists out of phrases much more easily. 
+
+For example, if I wanted to list the letters of the alphabet, I could type:
+-
+alphabet="abcdefghijklmnopqrstuvwxyz"
+alphabet=list(alphabet)
+-
+instead of: 
+-
+list=["a", "b", "c", etc...]. 
+-

@@ -1,19 +1,39 @@
 # Complete your individualized AI problems here
 
-def fizbuzz(input_num):
-    if(input_num%3==0):
-        if(input_num%5==0):
-            return 'FizzBuzz'
-        return 'Fizz'
-    elif(input_num%5==0):
-        return 'Buzz'
+#PRIME NUMBER CHECKER:
+def IsPrime(num):
+    Prime=True
+    if num<2:
+        Prime=False
     else:
-        return input_num
+        for i in range(2, num, 1):
+            if num%i==0:
+                Prime=False
+    return Prime
+    
+#PALINDROME CHECKER:
+def Palindrome(word):
+    IsPalindrome=False
+    wordForwards=[]
+    wordBackwards=[]
+    for i in range(len(word)):
+        wordForwards.append(word[i])
+        wordBackwards.append(word[len(word)-i-1])
+    if wordForwards==wordBackwards:
+        IsPalindrome=True
+    return IsPalindrome
 
-assert fizbuzz(1) == 1, "fizzbuzz 1 test"
-assert fizbuzz(3) == "Fizz", "fizzbuzz 3 test"
-assert fizbuzz(4) == 4, "fizzbuzz 4 test"
-assert fizbuzz(5) == "Buzz", "fizzbuzz 5 test"
-assert fizbuzz(6) == "Fizz", "fizzbuzz 6 test"
-assert fizbuzz(15) == "FizzBuzz", "fizzbuzz 15 test"
+#VOWEL COUNTER:
+def VowelChecker(wordList):
+    vowels=0
+    for i in range(len(wordList)):
+        print(wordList[i])    
+        if wordList[i]=="a" or wordList[i]=="e" or wordList[i]=="i" or wordList[i]=="o" or wordList[i]=="u":
+            vowels+=1
+    return vowels
+word="this sentence has nine vowels."
+wordList=list(word)
+print(VowelChecker(wordList))
+
+
 
