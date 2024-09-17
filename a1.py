@@ -25,7 +25,8 @@ def absolute(n: int) -> int:
     Returns:
         the absolute value of the passed in number
     """
-    n+=(n*-2)
+    if n>0:
+        n+=(n*-2)
     return n
 
 def factorial(n: int) -> int:
