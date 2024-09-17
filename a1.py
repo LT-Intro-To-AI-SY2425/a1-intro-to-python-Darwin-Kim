@@ -25,7 +25,7 @@ def absolute(n: int) -> int:
     Returns:
         the absolute value of the passed in number
     """
-    if n>0:
+    if n<0:
         n+=(n*-2)
     return n
 
@@ -123,7 +123,7 @@ def median(lst: List[int]) -> float:
     if (len(lst)+1)%2==0:
         median=(len(lst)+1)/2
     else:
-        median=((lst[int((len(lst)+1)/2)])+(lst[int((len(lst)+1)/2)-1]))/2
+        median=((lst[(len(lst)+1)/2])+(lst[(len(lst)+1)/2-1]))/2
     return median
 
     raise NotImplementedError("median")
