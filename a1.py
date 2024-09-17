@@ -25,9 +25,8 @@ def absolute(n: int) -> int:
     Returns:
         the absolute value of the passed in number
     """
-    if n<0:
-        n+=(n*-2)
-    return n
+    return n if n>0 else n+n*-2
+
 
 def factorial(n: int) -> int:
     """Takes a number n, and computes the factorial n! You can assume the passed in
@@ -102,8 +101,8 @@ def mean(lst: List[int]) -> float:
     for i in range(len(lst)):
         sum+=lst[i]
     
-    mean=sum/(len(lst))
-    return mean
+    #mean=sum/(len(lst))
+    return sum/len(lst)
     raise NotImplementedError("mean")
 
 
@@ -119,12 +118,8 @@ def median(lst: List[int]) -> float:
     Returns:
         the median of the passed in list
     """
-    median=0
-    if (len(lst)+1)%2==0:
-        median=(len(lst)+1)/2
-    else:
-        median=((lst[(len(lst)+1)/2])+(lst[(len(lst)+1)/2-1]))/2
-    return median
+    num=len(lst)+1
+    return num/2 if num%2==0 else ((lst[num//2])+(lst[num//2-1]))/2
 
     raise NotImplementedError("median")
 
