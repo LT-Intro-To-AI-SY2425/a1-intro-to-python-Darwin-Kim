@@ -14,7 +14,6 @@ check, if you do not complete the generative AI portion of the assignment.
 
 from typing import List, TypeVar
 
-
 def absolute(n: int) -> int:
     """Gives the absolute value of the passed in number. Cannot use the built in
     function `abs`.
@@ -27,7 +26,6 @@ def absolute(n: int) -> int:
     """
     return n if n>0 else n+n*-2
 
-
 def factorial(n: int) -> int:
     """Takes a number n, and computes the factorial n! You can assume the passed in
     number will be positive
@@ -39,17 +37,10 @@ def factorial(n: int) -> int:
         factorial of the passed in number
     """
     product=1
-    i=1
-    while i<=n:
-        product=product*i
-        i+=1
+    for i in range(1,n+1,1): product=product*i
     return product
-    
-    raise NotImplementedError("factorial")
-
 
 T = TypeVar("T")
-
 
 def every_other(lst: List[T]) -> List[T]:
     """Takes a list and returns a list of every other element in the list, starting with
@@ -63,12 +54,8 @@ def every_other(lst: List[T]) -> List[T]:
         a list of every of other item in the original list starting with the first
     """
     Output=[]
-    for i in range(0,len(lst),2):
-        Output.append(lst[i])
+    for i in range(0,len(lst),2): Output.append(lst[i])
     return Output
-
-    raise NotImplementedError("every_other")
-
 
 def sum_list(lst: List[int]) -> int:
     """Takes a list of numbers, and returns the sum of the numbers in that list. Cannot
@@ -81,12 +68,8 @@ def sum_list(lst: List[int]) -> int:
         the sum of the passed in list
     """
     sum=0
-    for i in range(len(lst)):
-        sum+=lst[i]
+    for i in range(len(lst)): sum+=lst[i]
     return sum
-
-    raise NotImplementedError("sum_list")
-
 
 def mean(lst: List[int]) -> float:
     """Takes a list of numbers, and returns the mean of the numbers.
@@ -97,14 +80,7 @@ def mean(lst: List[int]) -> float:
     Returns:
         the mean of the passed in list
     """
-    sum=0
-    for i in range(len(lst)):
-        sum+=lst[i]
-    
-    #mean=sum/(len(lst))
-    return sum/len(lst)
-    raise NotImplementedError("mean")
-
+    return sum_list(lst)/len(lst)
 
 def median(lst: List[int]) -> float:
     """Takes an ordered list of numbers, and returns the median of the numbers.
@@ -148,17 +124,11 @@ def duck_duck_goose(lst: List[str]) -> List[str]:
     while len(lst)>2:
         count+=1
         posit+=1
-        if posit>len(lst)-1:
-            posit=-1
+        if posit>len(lst)-1: posit=-1
         if count==3:
             del lst[posit]
             count=0
     return lst
-        
-
-
-    raise NotImplementedError("duck_duck_goose")
-
 
 # this line causes the nested code to be skipped if the file is imported instead of run
 if __name__ == "__main__":
